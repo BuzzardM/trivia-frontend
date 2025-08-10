@@ -16,10 +16,12 @@ WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
+ARG NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the application
 RUN corepack enable pnpm && pnpm run build
 
 # Production image, copy all the files and run next
@@ -49,8 +51,5 @@ EXPOSE 3000
 
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
-
-# Runtime environment variable - can be overridden when running container
-ENV NEXT_PUBLIC_API_BASE_URL=""
 
 CMD ["node", "server.js"]
