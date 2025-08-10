@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/select';
 import { useCategories } from '@/hooks/useQuiz';
 import { QuizConfig } from '@/types/quiz';
-import { Loader2, Shuffle, Target, FileText, TrueOrFalse } from 'lucide-react';
+import { Loader2, Shuffle, Target, FileText } from 'lucide-react';
 
 interface QuizConfigFormProps {
   onStartQuiz: (config: QuizConfig) => void;
