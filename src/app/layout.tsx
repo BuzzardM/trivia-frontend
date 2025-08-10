@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: 'TriviaChamp - Test Your Knowledge',
   description:
     'Challenge yourself with engaging trivia questions across multiple categories and difficulty levels.',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
